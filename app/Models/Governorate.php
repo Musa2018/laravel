@@ -15,4 +15,12 @@ class Governorate extends Model
     {
         return $this->hasMany(User::class);
     }
+    public function Farmers(){
+        return $this->hasMany(Farmer::class);
+    }
+
+    public function locality()
+    {
+        return $this->belongsTo(Locality::class, 'locality_id');
+    }
 }

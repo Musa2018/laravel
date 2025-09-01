@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FarmersController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\UsersController;
 
@@ -22,8 +23,9 @@ Route::middleware('auth')->group(function () {
     Route::put('users/{user}', [UsersController::class, 'update'])->name('users.update');
     Route::get('users/{user}', [UsersController::class, 'show'])->name('users.show');
     Route::delete('/users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
-
-
 });
+Route::get('/farmers', [FarmersController::class, 'index'])->name('farmers.index');
+
+
 
 require __DIR__.'/auth.php';
